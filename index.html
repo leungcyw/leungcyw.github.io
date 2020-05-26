@@ -13,6 +13,14 @@ right: 10px;
 z-index: 999;
 margin-top: .25cm;
 }
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
 body {margin:0;}
 .topnav {
   overflow: hidden;
@@ -91,7 +99,7 @@ function myFunction() {
     }
 }
 </script>
-<div style="text-aligh: center; font-size:50px; transform: translate(0%, -50%);">
+<div class="container">
 	<p>Welcome to</p>
 	<p>Demystifying AI</p>
 </div>  
