@@ -114,13 +114,15 @@ A* Search
 	<iframe src="https://player.vimeo.com/video/422322285?byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 </center>
 <div style="margin: 0% 20% 0% 20%">
-<p>
-1. Initialize a list called frontier that contains pairs of (square, total_cost). Let frontier be ordered from lowest total_cost to highest total_cost.<br>-Let the cost of black_square = 1, green_square = 5, blue_square = infinity, and path_cost be the sum the costs of all squares on the path.<br>-Let manhattan_dist = vertical_distance + horizontal_distance between the current square and destination<br>-Let total_cost = path_cost + manhattan_dist</p>
+<p><i>In one sentence:</i> The computer remembers the cost of each square (grass vs. normal and how far it is from the destination) and visits neighboring squares with the lowest costs until the destination is reached<p>
+
+<p><i>Step by step:</i><br>
+1. Initialize a list called <b>frontier</b> that contains pairs of <b>(square, total_cost)</b>. Let <b>frontier</b> be ordered from lowest <b>total_cost</b> to highest <b>total_cost</b>.<br>-Let the cost of black_square = 1, green_square = 5, blue_square = infinity, and <b>path_cost</b> be the sum of the costs of all squares on the path.<br>-Let <b>manhattan_dist</b> = vertical_distance + horizontal_distance between the current square and destination<br>-Let <b>total_cost = path_cost + manhattan_dist</b></p>
 <p>2. Start at the yellow square.</p>
 <p>
-3.For every neighboring square:<br>-If the square is the destination, congratulations! You have found the shortest path.<br>-If the square has not been explored, add the (square, total_cost) pair to frontier.<br>-If the square has been explored, if the total_cost is less than the current total_cost in frontier, add the (square, total_cost) pair to frontier.</p>
+3.For every neighboring square:<br>-If the square is the destination, congratulations! You have found the shortest path.<br>-If the square has not been explored, add the <b>(square, total_cost)</b> pair to <b>frontier</b>.<br>-If the square has been explored, if the <b>total_cost</b> is less than the current <b>total_cost</b> in <b>frontier</b>, add the <b>(square, total_cost)</b> pair to <b>frontier</b>.</p>
 <p>
-4. Take the first pair from frontier (the one with the lowest cost), and repeat step 3 until the destination is found.</p>
+4. Take the first pair from <b>frontier</b> (the one with the lowest cost), and repeat step 3 until the destination is found.</p>
 </div>		
 </body>
 </html>
