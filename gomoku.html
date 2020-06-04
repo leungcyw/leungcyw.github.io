@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+<style>
+.logo {
+position: absolute;
+right: 10px;
+z-index: 999;
+margin-top: .25cm;
+}
+	
+body {margin:0;}
+.topnav {
+  overflow: hidden;
+  background-color: #d1d1e0; 
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: black; <!--color of the text on menu bar-->
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: 'Roboto', sans-serif;
+  font-weight:bold;
+}
+.topnav a:hover {
+  background-color: #f0f0f5;
+  color: black;
+}
+.topnav .icon {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+h1 {
+	font-family: 'Roboto', sans-serif;
+}
+p {
+	font-family: 'Roboto'; sans-serif;
+}
+
+hr{
+border: 1px solid #89D0D1;
+width: 80%
+}
+
+.infobox{
+	margin: 0cm 7cm 0cm 7cm;	
+}
+
+</style>
+</head>
+<body>
+	
+<title>Gomoku</title>
+
+<div class="topnav" id="myTopnav">
+  <a href="index.html">Home</a>
+  <a href="search.html">A* Search</a>
+  <a href="2048.html">2048</a>
+  <a href="blackjack.html">Blackjack</a>
+  <a href ="gomoku.html">Gomoku</a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+<div style="padding-left:16px">
+
+</div>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+<h1><center>
+Gomoku
+</center></h1>
+<center>
+<p style="margin: 0% 20% 0% 20%">In the game of Gomoku, two players compete with opposite colored tiles. Their goal is to place five tiles of their color in a row. This game is simulated below using Monte Carlo Tree Search.
+</p>
+ </center>
+<br>
+<center>
+<iframe src="https://player.vimeo.com/video/422323221?byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</center>
+<div style="margin: 0% 20% 0% 20%">
+<p>The computer starts off with a budget, which in this simulation, is 1000. That means that for each move, the computer will run 1000 simulations to deduce which move is the best move to make. The results of the simulations are all stored in the computer’s memory.</p>
+<p>In each simulation, the computer first considers the possible actions for the current state of the game. If there is an action that has not been simulated yet, the computer will choose that action. If all possible actions have already been simulated, the computer will pick the one with the highest reward.</p>
+<p>Once an action is picked, the computer will simulate random moves for both players until the game ends. If the black player won, the computer will update the reward values for the actions by the black player since it helped them win. If the white player won, the computer will update the reward values for the actions by the white player. These reward values are used by each simulated player to decide the best move.</p>
+</div>		
+</body>
+</html>
