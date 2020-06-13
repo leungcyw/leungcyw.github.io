@@ -112,7 +112,7 @@ Gomoku
 </center>
 <div style="margin: 0% 20% 0% 20%">
 <p>The computer starts off with a budget, which in this simulation, is 1000. That means that for each move, the computer will run 1000 simulations to deduce which move is the best move to make. The results of the simulations are all stored in the computer’s memory.</p>
-<p>In each simulation, the computer first considers the possible actions for the current state of the game. If there is an action that has not been simulated yet, the computer will choose that action. If all possible actions have already been simulated, the computer will pick the one with the highest reward.</p>
+<p>In each simulation, the computer first considers the possible actions for the current state of the game. If there is an action that has not been simulated yet, the computer will choose that action. If all possible actions have already been simulated, the computer will pick the one with the highest value. This value is a balance between the winning rate of that move and its "freshness factor." If a move has not been explored many times, it will have a high freshness factor. In this manner, we can simulate moves that we know have a high payoff, while still considering moves that we haven't given a fair chance.</p>
 <p>Once an action is picked, the computer will simulate random moves for both players until the game ends. If the black player won, the computer will update the reward values for the actions by the black player since it helped them win. If the white player won, the computer will update the reward values for the actions by the white player. These reward values are used by each simulated player to decide the best move.</p>
 </div>		
 </body>
